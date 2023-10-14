@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "839399110190",
+    "firebase_url": "https://public-cases-project-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "public-cases-project",
+    "storage_bucket": "public-cases-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839399110190:android:43044b59a87065511451bf",
+        "android_client_info": {
+          "package_name": "com.example.case_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOH97nrvEgLAQjW34ImA57KvIN41Oze8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
