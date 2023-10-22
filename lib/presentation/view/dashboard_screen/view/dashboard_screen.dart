@@ -54,14 +54,39 @@ class _DashboardScreenState extends State<DashboardScreen> {
                               height: MediaQuery.of(context).size.height / 10,
                               child: Card(
                                 elevation: 5,
-                                child: Center(
-                                  child: Text(
-                                    caseModel.caseName!,
-                                    style: const TextStyle(
-                                      color: Colors.blue,
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 10),
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        caseModel.caseName!,
+                                        style: const TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                      const Spacer(),
+                                      IconButton(
+                                        onPressed: () => widget
+                                            .dashboardViewModel
+                                            .navigateToEditScreen(
+                                                context, caseModel),
+                                        icon: const Icon(
+                                          Icons.edit,
+                                          color: Colors.blue,
+                                        ),
+                                      ),
+                                      IconButton(
+                                        onPressed: () => widget
+                                            .dashboardViewModel
+                                            .removeCase(caseModel),
+                                        icon: const Icon(
+                                          Icons.delete,
+                                          color: Colors.blue,
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ),
                               ),

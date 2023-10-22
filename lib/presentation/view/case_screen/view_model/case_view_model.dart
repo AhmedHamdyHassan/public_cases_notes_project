@@ -58,6 +58,12 @@ class CaseViewModel {
     );
   }
 
+  Future<void> deleteService(int serviceId) async {
+    final caseModel = await casesRipository.getCaseById(caseId);
+    caseModel.services!.removeAt(serviceId);
+    await casesRipository.updateCase(caseModel);
+  }
+
   void navigateToEditCaseScreen(BuildContext context) {
     Navigator.pushReplacement(
       context,

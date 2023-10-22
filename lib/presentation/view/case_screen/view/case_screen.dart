@@ -73,17 +73,31 @@ class _CaseScreenState extends State<CaseScreen> {
                           child: Card(
                             color: widget.caseViewModel
                                 .getColor(serviceModel.status!),
-                            child: Center(
-                              child: Text(
-                                serviceModel.serviceName!,
-                                style: TextStyle(
-                                  color: serviceModel.status != "0"
-                                      ? Colors.white
-                                      : Colors.blue,
-                                  fontSize: 17,
-                                  fontWeight: FontWeight.bold,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 10),
+                              child: Row(children: [
+                                Text(
+                                  serviceModel.serviceName!,
+                                  style: TextStyle(
+                                    color: serviceModel.status != "0"
+                                        ? Colors.white
+                                        : Colors.blue,
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
+                                const Spacer(),
+                                IconButton(
+                                  onPressed: () =>
+                                      widget.caseViewModel.deleteService(index),
+                                  icon: Icon(
+                                    Icons.delete,
+                                    color: serviceModel.status != "0"
+                                        ? Colors.white
+                                        : Colors.blue,
+                                  ),
+                                ),
+                              ]),
                             ),
                           ),
                         ),

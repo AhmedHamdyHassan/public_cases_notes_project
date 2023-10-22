@@ -36,6 +36,10 @@ class CasesRipository {
     await databaseReference.child(caseModel.id!).update(caseModel.toJson());
   }
 
+  Future<void> deleteCase(CaseModel caseModel) async {
+    await databaseReference.child(caseModel.id!).remove();
+  }
+
   CaseModel getCase(Map data, String key) {
     final caseModel = CaseModel.fromJson(
       data.cast<String, dynamic>(),
